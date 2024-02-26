@@ -1,0 +1,47 @@
+#include <iostream>
+#include <fstream>
+using namespace std;
+int main() {
+    setlocale(0, "");
+    int choice;
+
+    do {
+        cout << "Меню:\n";
+        cout << "1. Создать файл\n";
+        cout << "2. Открыть файл\n";
+        cout << "3. Настройки\n";
+        cout << "4. Выйти\n";
+        cout << "Выберите пункт меню: ";
+        cin >> choice;
+
+        switch (choice) {
+        case 1: {
+            ofstream file("example.txt");
+            if (file.is_open()) {
+                file << "Пример текста в файле" << endl;
+                file.close();
+                cout << "Файл успешно создан" << endl;
+            }
+            else {
+                cout << "Ошибка при создании файла" << endl;
+            }
+        }
+
+            break;
+        case 2:
+            
+            break;
+        case 3:
+            
+            break;
+        case 4:
+            cout << "До свидания!\n";
+            break;
+        default:
+            cout << "Неверный выбор. Попробуйте еще раз.\n";
+            break;
+        }
+    } while (choice != 4);
+    int _; cin >> _;
+    return 0;
+}
